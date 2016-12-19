@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "fonctions.h"
+#include "functions.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>
