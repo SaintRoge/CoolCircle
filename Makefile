@@ -12,7 +12,6 @@ main.o: Src/main.cpp Src/functions.cpp
 functions.o: Src/functions.cpp
 		g++ -c Src/functions.cpp 
 
-
 clean:
 		rm -rf *.o 
 
