@@ -13,14 +13,12 @@ functions.o: Src/functions.cpp
 		g++ -c Src/functions.cpp 
 
 clean:
-		rm -rf *.o SFML-2.4.1-linux-gcc-64-bit.tar.gz SFML-2.4.1
+		rm -rf *.o 
 
 mrproper: clean
 		rm -rf SFML-Game  
 
 install: 
-		wget http://www.sfml-dev.org/files/SFML-2.4.1-linux-gcc-64-bit.tar.gz
-		tar zxvf SFML-2.4.1-linux-gcc-64-bit.tar.gz
-		sudo cp -R SFML-2.4.1/include/SFML /usr/include
+		sudo apt-get install libsfml-dev
 		make all
 
