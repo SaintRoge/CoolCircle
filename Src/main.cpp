@@ -29,6 +29,8 @@ int main() {
     int gMax(std::rand() % 256);
     int bMax(std::rand() % 256);
 
+    float speed((float)(std::rand() % 1000) / 2000.f + 1.f);
+
     /*std::cin >> rMin;
     std::cin >> gMin;
     std::cin >> bMin;
@@ -62,7 +64,7 @@ int main() {
         window.clear();
 
         for (int j(1); j < it; j++) { //Moving
-            shapeArray[j].setRadius(shapeArray[j].getRadius() - 0.3);
+            shapeArray[j].setRadius(shapeArray[j].getRadius() - speed);
             window.draw(shapeArray[j]);
         }
         window.display();
