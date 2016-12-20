@@ -29,6 +29,14 @@ int main() {
     int gMax(std::rand() % 256);
     int bMax(std::rand() % 256);
 
+    std::cout << "Minimum Red : " << rMin << std::endl;
+    std::cout << "Minimum Green : " << gMin << std::endl;
+    std::cout << "Minimum Blue : " << bMin << std::endl << std::endl;
+
+    std::cout << "Maximum Red : " << rMax << std::endl;
+    std::cout << "Maximum Green : " << gMax << std::endl;
+    std::cout << "Maximum Blue : " << bMax << std::endl << std::endl;
+
     float speed((float)(std::rand() % 1000) / 2000.f + 1.f);
 
     /*std::cin >> rMin;
