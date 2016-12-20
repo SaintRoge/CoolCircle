@@ -2,7 +2,7 @@
 
 .SUFFIXES:
 
-app = SFML-Game
+app = CoolCircle
 lib = -lsfml-graphics -lsfml-window -lsfml-system
 CXX = g++
 RM = rm -rf
