@@ -11,11 +11,11 @@
 using namespace sf;
 
 int main() {
-    RenderWindow const window(VideoMode(300, 300), "Color Game", Style::Close | Style::Resize);
+    RenderWindow window(VideoMode(300, 300), "Color Game", Style::Close | Style::Resize);
 
     srand (time(NULL));
 
-    int const it(rand()% 20 + 5);
+    int const it(rand()% 201 +25);
 
     CircleShape shapeArray[it];
 
@@ -25,17 +25,17 @@ int main() {
 
     }
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
+    while (window.isOpen()) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
                 window.close();
         }
 
         window.clear();
-        window.draw(shape);
+        for (int j(0); j < it; j++) {
+            window.draw(shapeArray[j]);
+        }
         window.display();
     }
 
