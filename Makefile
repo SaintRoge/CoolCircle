@@ -2,21 +2,23 @@
 
 .SUFFIXES:
 
+app = SFML-Game
+lib = -lsfml-graphics -lsfml-window -lsfml-system
+CXX = g++
+RM = rm -rf
+
 all: main.o functions.o
-		g++ main.o functions.o -o SFML-Game -lsfml-graphics -lsfml-window -lsfml-system
-		@echo "Build finished. You are ready to use SFML-Game :-)"
+		$(CXX) $^ -o $(app) $(lib)
+		@echo "Build finished. You are ready to use $(app) :-)"
 
-main.o: Src/main.cpp Src/functions.cpp
-		g++ -c Src/main.cpp Src/functions.cpp
-
-functions.o: Src/functions.cpp
-		g++ -c Src/functions.cpp 
+%.o: Src/%.cpp
+		$(CXX) -c $< -o $@  
 
 clean:
-		rm -rf *.o 
+		$(RM) *.o 
 
 mrproper: clean
-		rm -rf SFML-Game  
+		$(RM) $(app)  
 
 install: 
 		sudo apt-get install libsfml-dev
