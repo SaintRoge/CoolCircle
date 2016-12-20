@@ -27,3 +27,8 @@ install:
 run: all
 		./$(app)
 
+pro: all clean run
+
+zpro: install clean run
+
+one: all run mrproper
