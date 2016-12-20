@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class Square : public sf::Shape {
+class Square {
 public:
 	Square();
 

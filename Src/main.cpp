@@ -1,30 +1,36 @@
 #include <SFML/Graphics.hpp>
-#include "functions.hpp"
-#include "square.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+#include "functions.hpp"
+#include "square.hpp"
+#include "circle.hpp"
+
 using namespace sf;
 
 int main() {
-    RenderWindow window(VideoMode(200, 200), "SFML works!");
+    RenderWindow const window(VideoMode(300, 300), "Color Game", Style::Close | Style::Resize);
 
     srand (time(NULL));
 
-    int red(rand() % 266);
-    int green(rand() % 266);
-    int blue(rand() % 266);
+    int const it(rand()% 20 + 5);
 
-    CircleShape shape(100.f);
+    CircleShape shapeArray[it];
 
-    shape.setFillColor(Color(red, green, blue));
+    for (int i(0); i < it; i++) {
 
-    while (window.isOpen()) {
-        Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == Event::Closed)
+        shapeArray[i] = randomCircle();
+
+    }
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
                 window.close();
         }
 

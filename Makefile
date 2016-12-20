@@ -7,7 +7,7 @@ lib = -lsfml-graphics -lsfml-window -lsfml-system
 CXX = g++
 RM = rm -rf
 
-all: main.o functions.o
+all: main.o functions.o square.o circle.o
 		$(CXX) $^ -o $(app) $(lib)
 		@echo "Build finished. You are ready to use $(app) :-)"
 
