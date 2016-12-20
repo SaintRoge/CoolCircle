@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "functions.hpp"
+#include "square.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>
