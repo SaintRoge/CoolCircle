@@ -15,21 +15,18 @@ int main() {
 
     srand (time(NULL));
 
-    int max(100);
-    int min(20);
+    int max(200);
+    int min(100);
 
-    std::cout << "Max : ";
-    std::cin >> max;
+    float x;
+    float y;
 
-    std::cout << std::endl << "Min : ";
-    std::cin >> min;
-
-    RenderWindow window(VideoMode(380, 380), "Color Game", Style::Close | Style::Resize);
+    RenderWindow window(VideoMode(750, 750), "Color Game", Style::Close | Style::Resize);
 
     int const it(rand()% (max - min) + min + 1);
 
     CircleShape shapeArray[it];
-    std::cout << "Number of circles : " << it << std::endl;
+    std::cout << "Number of circles : " << it-1 << std::endl;
 
     for (int i(0); i < it; i++) {
 
@@ -42,11 +39,12 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
                 window.close();
-        }
+        }   
 
         window.clear();
-        for (int j(0); j < it; j++) {
-            shapeArray[j].setRadius(shapeArray[j].getRadius() - j);
+
+        for (int j(1); j < it; j++) {
+            shapeArray[j].setRadius(shapeArray[j].getRadius() - 0.3);
             window.draw(shapeArray[j]);
         }
         window.display();
