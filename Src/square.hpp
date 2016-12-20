@@ -3,9 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 
-class Square {
+class Square : public sf::Shape {
 public:
-	Square();
+	explicit Square();
 
 };
 
