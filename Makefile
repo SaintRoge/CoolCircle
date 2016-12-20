@@ -24,4 +24,6 @@ install:
 		sudo apt-get install libsfml-dev
 		make all
 
+run: all
+		./$(app)
 
