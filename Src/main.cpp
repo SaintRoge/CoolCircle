@@ -50,7 +50,7 @@ int main() {
     float x;
     float y;
 
-    RenderWindow window(VideoMode(750, 750), "CoolCircle", Style::Close | Style::Resize);
+    RenderWindow window(VideoMode(750, 750), "CoolCircle", Style::Close);
 
     int const it(std::rand()% (max - min) + min + 1);
 
